@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="1033.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zad3.Controller">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <HBox alignment="TOP_CENTER" prefHeight="255.0" prefWidth="438.0" spacing="5.0">
+      <children>
+         <VBox prefHeight="255.0" prefWidth="150.0">
+            <children>
+               <Button fx:id="info" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showButton" prefHeight="90.0" prefWidth="150.0" text="Wyświetl Pracowników" textAlignment="CENTER" />
+               <Button fx:id="delGroup" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#delGroup" prefHeight="88.0" prefWidth="150.0" text="Usuń Grupę" textAlignment="CENTER" />
+            </children>
+         </VBox>
+         <TableView fx:id="tableGroups" onMouseClicked="#showButton" prefHeight="255.0" prefWidth="200.0">
+           <columns>
+             <TableColumn fx:id="Nazwa_g" prefWidth="93.0" text="Nazwa Grupy" />
+               <TableColumn fx:id="currentCap" prefWidth="103.0" text="Wypełnienie%" />
+           </columns>
+         </TableView>
+      </children>
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+   </HBox>
+   <TableView fx:id="tableEmployees" prefHeight="255.0" prefWidth="400.0">
+     <columns>
+       <TableColumn fx:id="imie" prefWidth="163.0" text="Imie" />
+       <TableColumn fx:id="nazwisko" prefWidth="143.0" text="Nazwisko" />
+         <TableColumn fx:id="wyplata" prefWidth="194.0" text="Pensja" />
+         <TableColumn fx:id="stan" prefWidth="188.0" text="Stan" />
+         <TableColumn fx:id="rok" prefWidth="198.0" text="Rok Urodzenia" />
+     </columns>
+   </TableView>
+   <HBox prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Button fx:id="delEmployee" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#delEmployee" prefHeight="37.0" prefWidth="150.0" text="Usuń Pracownika" textAlignment="CENTER" />
+         <Button fx:id="SortButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="58.0" text="Sort" />
+         <TextField fx:id="filter" promptText="Filter" />
+      </children>
+   </HBox>
+   <GridPane>
+     <columnConstraints>
+       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+     </columnConstraints>
+     <rowConstraints>
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+     </rowConstraints>
+      <children>
+         <TextField fx:id="nazwaField" promptText="Nazwa Grupy" GridPane.rowIndex="1" />
+         <TextField fx:id="maxField" promptText="Rozmiar Grupy" GridPane.rowIndex="2" />
+         <TextField fx:id="imieField" alignment="CENTER" promptText="Imie" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         <TextField fx:id="nazwiskoField" alignment="CENTER" promptText="Nazwisko" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         <TextField fx:id="salaryField" alignment="CENTER" promptText="Wynagrodzenie" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         <ChoiceBox fx:id="stateField" prefHeight="25.0" prefWidth="509.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+         <TextField fx:id="yearField" promptText="Rok Urodzenia" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         <Button fx:id="addGroup" mnemonicParsing="false" onAction="#addGroup" prefHeight="25.0" prefWidth="509.0" text="Dodaj Grupe" GridPane.rowIndex="6" />
+         <Button fx:id="addEmployee" mnemonicParsing="false" onAction="#addEmployee" prefHeight="25.0" prefWidth="499.0" text="dodaj Pracownika" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+         <Button fx:id="EditButton" mnemonicParsing="false" onAction="#EditButton" prefHeight="25.0" prefWidth="554.0" text="Edytuj Pracownika" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+         <Button fx:id="EditGroup" mnemonicParsing="false" onAction="#EditGroup" prefHeight="25.0" prefWidth="513.0" text="EdytujGrupe" GridPane.rowIndex="7" />
+      </children>
+   </GridPane>
+   <HBox alignment="CENTER" prefHeight="28.0" prefWidth="948.0" spacing="10.0" />
+   <HBox alignment="CENTER" layoutX="30.0" layoutY="458.0" prefHeight="28.0" prefWidth="948.0" spacing="10.0" />
+</VBox>
