@@ -11,6 +11,7 @@ The Employee Controller is a JavaFX project designed to help users manage and ke
 ## Future Enhancements
 
 - **File Saving:** Future updates may include the functionality to save data to a file for persistent storage.
+- **Multi-lingual support: ** may add support for English, French and German language.
 
 ## Requirements
 
